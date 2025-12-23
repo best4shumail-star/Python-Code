@@ -1,0 +1,82 @@
+GPS
+QNo.5
+
+operators = [
+
+    {
+        "action": "P and Q cross to side2",
+        "preconds": ["P side1", "Q side1", "Lantern side1"],
+        "add": ["P side2", "Q side2", "Lantern side2"],
+        "delete": ["P side1", "Q side1", "Lantern side1"]
+    },
+
+    {
+        "action": "P returns to side1",
+        "preconds": ["P side2", "Lantern side2"],
+        "add": ["P side1", "Lantern side1"],
+        "delete": ["P side2", "Lantern side2"]
+    },
+
+    {
+        "action": "R and S cross to side2",
+        "preconds": ["R side1", "S side1", "Lantern side1"],
+        "add": ["R side2", "S side2", "Lantern side2"],
+        "delete": ["R side1", "S side1", "Lantern side1"]
+    },
+
+    {
+        "action": "Q returns to side1",
+        "preconds": ["Q side2", "Lantern side2"],
+        "add": ["Q side1", "Lantern side1"],
+        "delete": ["Q side2", "Lantern side2"]
+    },
+
+    {
+        "action": "P and Q cross again to side2",
+        "preconds": ["P side1", "Q side1", "Lantern side1"],
+        "add": ["P side2", "Q side2", "Lantern side2"],
+        "delete": ["P side1", "Q side1", "Lantern side1"]
+    }
+]
+
+GPS
+QNo.4
+
+disk_ops = [
+    {
+        "action": "Move green disk on table",
+        "preconds": ["green-disk-on-pole", "green-disk-on-top"],
+        "add": ["green-disk-on-table", "blue-disk-on-top"],
+        "delete": ["green-disk-on-pole", "green-disk-on-top"]
+    },
+    {
+        "action": "Move blue disk on table",
+        "preconds": ["blue-disk-on-pole", "blue-disk-on-top"],
+        "add": ["blue-disk-on-table", "red-disk-free"],
+        "delete": ["blue-disk-on-pole", "blue-disk-on-top"]
+    },
+    {
+        "action": "Move red disk on table",
+        "preconds": ["red-disk-on-pole", "red-disk-free"],
+        "add": ["red-disk-on-table", "pole-empty"],
+        "delete": ["red-disk-on-pole"]
+    },
+    {
+        "action": "Move green disk back on pole",
+        "preconds": ["green-disk-on-table", "pole-empty"],
+        "add": ["green-disk-on-pole", "green-disk-on-top"],
+        "delete": ["green-disk-on-table", "pole-empty"]
+    },
+    {
+        "action": "Move blue disk back on pole",
+        "preconds": ["blue-disk-on-table", "green-disk-on-pole", "green-disk-on-top"],
+        "add": ["blue-disk-on-pole", "blue-disk-back-on-top"],
+        "delete": ["blue-disk-on-table", "green-disk-on-top"]
+    },
+    {
+        "action": "Move red disk back on pole",
+        "preconds": ["red-disk-on-table", "blue-disk-back-on-top"],
+        "add": ["red-disk-on-pole", "red-disk-on-top"],
+        "delete": ["red-disk-on-table", "blue-disk-back-on-top"]
+    }
+]
